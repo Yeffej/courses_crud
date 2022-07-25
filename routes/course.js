@@ -13,7 +13,7 @@ router.get("/", async (req, res) => {
     if(courses) {
         res.send(Sender.format(courses))
     }else {
-        res.send(Sender.format(null, false, "Bad request"))
+        res.send(Sender.format(null, false, "Server Error")).status(500)
     }
 
 })
@@ -25,7 +25,7 @@ router.post("/create", async (req, res) => {
     if(created) {
         res.send(Sender.format({}))
     }else {
-        res.send(Sender.format(null, false, "Bad request"))
+        res.send(Sender.format(null, false, "Server Error")).status(500)
     }
 })
 
@@ -36,7 +36,7 @@ router.put("/edit", async (req, res) => {
     if(edited) {
         res.send(Sender.format({}))
     }else {
-        res.send(Sender.format(null, false, "Bad request"))
+        res.send(Sender.format(null, false, "Server Error")).status(500)
     }
 })
 
@@ -56,7 +56,7 @@ router.delete("/delete", async (req, res) => {
     if(deleted) {
         res.send(Sender.format({}))
     }else {
-        res.send(Sender.format(null, false, "Bad request"))
+        res.send(Sender.format(null, false, "Server Error")).status(500)
     }
 })
 
