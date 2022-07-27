@@ -1,3 +1,5 @@
+const Sender = require("../models/responseSender")
+
 module.exports = function (req, res, next) {
     if(req.method.toUpperCase() !== "PUT") {
         next()
